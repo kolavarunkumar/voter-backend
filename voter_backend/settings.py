@@ -137,15 +137,18 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 #connect to mysql
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'voter_db',
-        'USER': 'root',
-        'PASSWORD': 'Vk8050864@',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': os.environ.get('MYSQLDATABASE'),
+        'USER': os.environ.get('MYSQLUSER'),
+        'PASSWORD': os.environ.get('MYSQLPASSWORD'),
+        'HOST': os.environ.get('MYSQLHOST'),
+        'PORT': os.environ.get('MYSQLPORT'),
     }
 }
+
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
