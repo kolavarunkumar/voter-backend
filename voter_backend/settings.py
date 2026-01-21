@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-igkk2z!0yc57%maj$v)c&i2i+30#+dvfl*-=imohejwt4pw60^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [voter-backend-qjwb.onrender.com',
+    'localhost',
+    '127.0.0.1']
 
 
 # Application definition
@@ -114,7 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -141,14 +143,19 @@ import os
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQLDATABASE'),
-        'USER': os.environ.get('MYSQLUSER'),
-        'PASSWORD': os.environ.get('MYSQLPASSWORD'),
-        'HOST': os.environ.get('MYSQLHOST'),
-        'PORT': os.environ.get('MYSQLPORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'voter_db',
+        'USER': 'postgres_user',
+        'PASSWORD': 'password',
+        'HOST': 'your_db_host',
+        'PORT': '5432',
     }
 }
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://voter-backend-qjwb.onrender.com',
+]
+
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
