@@ -143,7 +143,7 @@ import os
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'voter_db',
         'USER': 'postgres_user',
         'PASSWORD': 'password',
