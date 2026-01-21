@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-igkk2z!0yc57%maj$v)c&i2i+30#+dvfl*-=imohejwt4pw60^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [voter-backend-qjwb.onrender.com',
+ALLOWED_HOSTS = ['voter-backend-qjwb.onrender.com',
     'localhost',
     '127.0.0.1']
 
